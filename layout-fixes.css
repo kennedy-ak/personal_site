@@ -1,0 +1,169 @@
+/* Commercial Projects Layout Fix for Dark Mode */
+
+/* Fix for overall commercial project cards - maintain row layout */
+[data-theme="dark"] .commercial-project-card {
+    display: flex !important;
+    flex-direction: row !important;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #2d2d2d;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Fix for the image section - maintain proper width */
+  [data-theme="dark"] .commercial-project-img {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    position: relative;
+    height: auto !important;
+    overflow: hidden;
+  }
+  
+  /* Fix for the content section - maintain proper width */
+  [data-theme="dark"] .commercial-project-content {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    padding: 30px;
+  }
+  
+  /* Fix for slider container */
+  [data-theme="dark"] .project-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  /* Fix for slides container */
+  [data-theme="dark"] .project-slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  /* Fix for individual slides */
+  [data-theme="dark"] .project-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: 1;
+    display: block !important;
+  }
+  
+  /* Fix for active slide */
+  [data-theme="dark"] .project-slide.active {
+    opacity: 1;
+    z-index: 2;
+    display: block !important;
+  }
+  
+  /* Fix for slide images */
+  [data-theme="dark"] .project-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block !important;
+  }
+  
+  /* Fix the commercial project header alignment */
+  [data-theme="dark"] .commercial-project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  /* Fix heading text */
+  [data-theme="dark"] .commercial-project-header h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #bb86fc;
+  }
+  
+  /* Fix company badge */
+  [data-theme="dark"] .company-badge {
+    background-color: rgba(0, 119, 204, 0.2);
+    color: #03dac6;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  /* Fix project description text */
+  [data-theme="dark"] .commercial-project-content p {
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Fix project tags */
+  [data-theme="dark"] .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+  
+  [data-theme="dark"] .project-tag {
+    background-color: rgba(187, 134, 252, 0.2);
+    color: #bb86fc;
+    padding: 5px 12px;
+    border-radius: 4px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    transition: all 0.3s;
+  }
+  
+  /* Fix project links */
+  [data-theme="dark"] .project-links {
+    display: flex;
+    margin-top: 15px;
+  }
+  
+  [data-theme="dark"] .project-links a {
+    margin-right: 15px;
+    color: #ff4081;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  [data-theme="dark"] .project-links a i {
+    margin-right: 5px;
+  }
+  
+  /* Fix project results */
+  [data-theme="dark"] .project-results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+  }
+  
+  /* Media queries for responsive behavior */
+  @media (max-width: 768px) {
+    [data-theme="dark"] .commercial-project-card {
+      flex-direction: column !important;
+    }
+    
+    [data-theme="dark"] .commercial-project-img {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+      height: 250px !important;
+    }
+    
+    [data-theme="dark"] .commercial-project-content {
+      flex: 0 0 100% !important;
+      max-width: 100% !important;
+    }
+    
+    [data-theme="dark"] .project-results {
+      grid-template-columns: 1fr;
+    }
+  }

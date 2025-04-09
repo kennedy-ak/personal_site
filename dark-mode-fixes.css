@@ -1,0 +1,329 @@
+/* Complete Dark Mode Solution
+ * This file addresses both visibility and layout issues in dark mode
+ */
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --primary-color: #bb86fc;
+    --secondary-color: #03dac6;
+    --accent-color: #ff4081;
+    --gradient-start: #121212;
+    --gradient-end: #1f1f1f;
+    --dark-bg: #121212;
+    --light-bg: #1e1e1e;
+    --card-bg: #2d2d2d;
+    --text-dark: #e0e0e0;
+    --text-light: #ffffff;
+    --text-muted: #b0b0b0;
+    --success-color: #00c853;
+    --warning-color: #ffd600;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --header-bg: #1a1a1a;
+  }
+  
+  /*--------------------------------------------
+    SECTION 1: LAYOUT FIXES
+    Ensures proper layout in dark mode
+  --------------------------------------------*/
+  /* About Section Layout Fix for Dark Mode */
+
+/* Ensure the about section layout matches exactly between light and dark modes */
+[data-theme="dark"] .about-content {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 50px;
+    align-items: center;
+  }
+  
+  /* Left column - image container */
+  [data-theme="dark"] .about-img {
+    width: 100%;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Right column - text content */
+  [data-theme="dark"] .about-text {
+    width: 100%;
+    padding-left: 0;
+  }
+  
+  /* Ensure the image displays properly */
+  [data-theme="dark"] .about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 5px solid var(--secondary-color);
+  }
+  
+  /* Headings in about section */
+  [data-theme="dark"] .about-text h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Paragraph text */
+  [data-theme="dark"] .about-text p {
+    color: var(--text-dark);
+    margin-bottom: 15px;
+  }
+  
+  /* Skills heading */
+  [data-theme="dark"] .skills h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+  }
+  
+  /* Skill tags section */
+  [data-theme="dark"] .skill-tags {
+    display: flex !important;
+    flex-wrap: wrap;
+  }
+  
+  /* Individual skill tags */
+  [data-theme="dark"] .skill-tag {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 8px 16px;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(98, 0, 234, 0.2);
+    transition: all 0.3s;
+  }
+  
+  /* Preserves the same responsive behavior */
+  @media (max-width: 992px) {
+    [data-theme="dark"] .about-content {
+      grid-template-columns: 1fr !important;
+      gap: 30px;
+    }
+  
+    [data-theme="dark"] .about-img {
+      margin-bottom: 30px !important;
+    }
+  }
+  
+  /*--------------------------------------------
+    SECTION 2: VISIBILITY AND COLOR FIXES
+    Ensures all content is visible in dark mode
+  --------------------------------------------*/
+  
+  /* Fix for Projects Section Text */
+  [data-theme="dark"] .projects .section-title {
+    color: #03dac6;
+  }
+  
+  [data-theme="dark"] .projects .project-card {
+    background-color: #2d2d2d;
+    border: 1px solid rgba(3, 218, 198, 0.2);
+  }
+  
+  [data-theme="dark"] .projects .project-content h3 {
+    color: #bb86fc;
+  }
+  
+  [data-theme="dark"] .projects .project-content p {
+    color: #e0e0e0;
+  }
+  
+  [data-theme="dark"] .projects .project-tag {
+    background-color: rgba(187, 134, 252, 0.2);
+    color: #bb86fc;
+  }
+  
+  [data-theme="dark"] .projects .project-tag:hover {
+    background-color: #bb86fc;
+    color: #121212;
+  }
+  
+  /* Fix for Commercial Projects Section */
+  [data-theme="dark"] .commercial-projects {
+    background-color: #1e1e1e;
+  }
+  
+  [data-theme="dark"] .commercial-projects .section-title {
+    color: #03dac6;
+  }
+  
+  [data-theme="dark"] .commercial-projects .section-description {
+    color: #b0b0b0;
+  }
+  
+  [data-theme="dark"] .commercial-project-card {
+    background-color: #2d2d2d;
+  }
+  
+  [data-theme="dark"] .commercial-project-header h3 {
+    color: #bb86fc;
+  }
+  
+  [data-theme="dark"] .company-badge {
+    background-color: rgba(0, 119, 204, 0.2);
+    color: #03dac6;
+  }
+  
+  [data-theme="dark"] .commercial-project-content p {
+    color: #e0e0e0;
+  }
+  
+  [data-theme="dark"] .result-item i {
+    color: #03dac6;
+  }
+  
+  [data-theme="dark"] .result-item p {
+    color: #e0e0e0;
+  }
+  
+  /* Fix for Skills Section */
+  [data-theme="dark"] .skills h3 {
+    color: #bb86fc;
+  }
+  
+  [data-theme="dark"] .skill-tag {
+    background: linear-gradient(135deg, #bb86fc, #03dac6);
+    color: #121212;
+    font-weight: 600;
+  }
+  
+  /* General Dark Mode Fixes */
+  [data-theme="dark"] .brand-item {
+    background-color: #2d2d2d;
+  }
+  
+  [data-theme="dark"] img {
+    filter: brightness(0.9);
+  }
+  
+  [data-theme="dark"] .slider-arrow {
+    background-color: rgba(187, 134, 252, 0.3);
+    color: #ffffff;
+  }
+  
+  [data-theme="dark"] .slider-arrow:hover {
+    background-color: rgba(187, 134, 252, 0.6);
+  }
+  
+  [data-theme="dark"] .slider-dot {
+    background-color: rgba(187, 134, 252, 0.3);
+  }
+  
+  [data-theme="dark"] .slider-dot.active {
+    background-color: #bb86fc;
+  }
+  
+  /* Improve Text Contrast */
+  [data-theme="dark"] .about-text p,
+  [data-theme="dark"] .contact-form label,
+  [data-theme="dark"] .footer-section p {
+    color: #e0e0e0;
+  }
+  
+  /* Fix Form Inputs */
+  [data-theme="dark"] .form-control {
+    background-color: #333333;
+    color: #e0e0e0;
+    border-color: rgba(187, 134, 252, 0.2);
+  }
+  
+  [data-theme="dark"] .form-control:focus {
+    border-color: #03dac6;
+    box-shadow: 0 0 0 3px rgba(3, 218, 198, 0.2);
+  }
+  
+  /* Fix Brand Sliders */
+  [data-theme="dark"] .brands {
+    background-color: #1e1e1e;
+  }
+  
+  /* Fixed Testimonials */
+  [data-theme="dark"] .testimonials {
+    background-color: #1e1e1e;
+  }
+  
+  [data-theme="dark"] .testimonial-item {
+    background-color: #2d2d2d;
+  }
+  
+  [data-theme="dark"] .testimonial-content p {
+    color: #b0b0b0;
+  }
+  
+  [data-theme="dark"] .author-info h4 {
+    color: #bb86fc;
+  }
+  
+  [data-theme="dark"] .author-info p {
+    color: #b0b0b0;
+  }
+  
+  /* Footer links */
+  [data-theme="dark"] .footer-section ul li a {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  [data-theme="dark"] .footer-section ul li a:hover {
+    color: #03dac6;
+  }
+  
+  /* Project links */
+  [data-theme="dark"] .project-links a {
+    color: #ff4081;
+  }
+  
+  [data-theme="dark"] .project-links a:hover {
+    color: #bb86fc;
+  }
+  
+  /* Force element visibility */
+  [data-theme="dark"] .project-card,
+  [data-theme="dark"] .commercial-project-card,
+  [data-theme="dark"] .skill-tag,
+  [data-theme="dark"] .brand-item,
+  [data-theme="dark"] .about-img img,
+  [data-theme="dark"] .project-img img {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+  }
+  
+  /*--------------------------------------------
+    SECTION 3: RESPONSIVE ADJUSTMENTS
+    Maintains responsive behavior in dark mode
+  --------------------------------------------*/
+  
+  @media (max-width: 992px) {
+    [data-theme="dark"] .about-content {
+      grid-template-columns: 1fr !important;
+      gap: 30px;
+    }
+  
+    [data-theme="dark"] .about-img {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    [data-theme="dark"] .project-grid {
+      grid-template-columns: 1fr !important;
+    }
+    
+    [data-theme="dark"] .commercial-project-card {
+      flex-direction: column;
+    }
+    
+    [data-theme="dark"] .commercial-project-img {
+      flex: 0 0 100%;
+    }
+    
+    [data-theme="dark"] .commercial-project-content {
+      flex: 0 0 100%;
+    }
+  }
+
+
+  

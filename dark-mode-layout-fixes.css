@@ -1,0 +1,74 @@
+/* Layout Fixes for Dark Mode */
+
+/* Fix About Me Section Layout in Dark Mode */
+[data-theme="dark"] .about-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  [data-theme="dark"] .about-img {
+    flex: 1;
+    margin-bottom: 0 !important;
+  }
+  
+  [data-theme="dark"] .about-text {
+    flex: 1;
+    padding-left: 50px;
+  }
+  
+  /* Fix My Projects Section Size in Dark Mode */
+  [data-theme="dark"] .project-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)) !important;
+    gap: 30px;
+  }
+  
+  [data-theme="dark"] .project-card {
+    height: auto !important;
+    width: auto !important;
+  }
+  
+  /* Media queries to maintain responsive behavior */
+  @media (max-width: 992px) {
+    [data-theme="dark"] .about-content {
+      flex-direction: column !important;
+    }
+  
+    [data-theme="dark"] .about-img {
+      margin-bottom: 30px !important;
+    }
+  
+    [data-theme="dark"] .about-text {
+      padding-left: 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    [data-theme="dark"] .project-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  
+  /* Additional visibility fixes */
+  [data-theme="dark"] .about-img img,
+  [data-theme="dark"] .project-img img {
+    visibility: visible !important;
+    opacity: 1 !important;
+    display: block !important;
+  }
+  
+  /* Ensure proper sizing for project cards */
+  [data-theme="dark"] .project-img {
+    height: 200px !important;
+  }
+  
+  /* Fix any transform issues on project cards */
+  [data-theme="dark"] .project-card:not(:hover) {
+    transform: none !important;
+  }
+  
+  [data-theme="dark"] .project-card:hover {
+    transform: translateY(-12px) rotate(1deg) !important;
+  }

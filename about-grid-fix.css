@@ -1,0 +1,36 @@
+/* About Section Grid Layout Fix for Dark Mode */
+
+/* Force a 2-column grid layout for the about section in dark mode */
+[data-theme="dark"] .about-content {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 50px;
+    align-items: center;
+  }
+  
+  /* Image container takes full width of its grid cell */
+  [data-theme="dark"] .about-img {
+    width: 100%;
+  }
+  
+  /* Text container takes full width of its grid cell */
+  [data-theme="dark"] .about-text {
+    width: 100%;
+    padding-left: 0; /* Remove any padding that might be applied from flex layout */
+  }
+  
+  /* Responsive adjustment for smaller screens */
+  @media (max-width: 992px) {
+    [data-theme="dark"] .about-content {
+      grid-template-columns: 1fr !important; /* Change to single column on smaller screens */
+      gap: 30px;
+    }
+  }
+  
+  /* Ensure the image displays properly */
+  [data-theme="dark"] .about-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+  }
